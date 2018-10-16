@@ -1,0 +1,41 @@
+@include b('site-header'){
+	position: relative;
+	@include padding-y(45px, 60px);
+	z-index: z-index('default');
+	@include bg('../img/header.jpg');
+	color: $color-white;
+	text-align: center;
+	&:before{
+		@include pseudo();
+		left: 0;
+		top: 0;
+		@include size(100%);
+		background-color: transparentize($color-black, 0.25);
+		z-index: -1;
+	}
+	@include min(sm){
+		@include padding-y(75px, 50px);
+	}
+	@include min(md){
+		@include padding-y(160px, 120px);
+		@media screen{
+			background-attachment: fixed;
+		}
+	}
+
+	@include m('thx'){
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+		padding: 0;
+	}
+
+	@include m('question'){
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+		padding: 0;
+	}
+}

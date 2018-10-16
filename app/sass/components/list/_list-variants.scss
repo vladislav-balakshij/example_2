@@ -1,0 +1,30 @@
+@include b('list'){
+	&_check{
+		li{
+			padding-left: 30px;
+			&:not(:last-child){
+				margin-bottom: 10px;
+			}
+			&:after{
+				top: 5px;
+				left: 0;
+				@include bg('../img/list-check.png');
+				@include size(19px, 17px);
+			}
+		}
+	}
+	&_flag{
+		li{
+			padding-left: 35px;
+			&:not(:last-child){
+				margin-bottom: 10px;
+			}
+			&:after{
+				top: 5px;
+				left: 0;
+				@include bg('../img/list-flag.svg');
+				@include size(21px, 23px);
+			}
+		}
+	}
+}

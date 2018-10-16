@@ -1,0 +1,56 @@
+/// Sizes for elements.
+$sizes: (
+	'title-xs': (
+		xs:   18px
+	),
+	'title-sm': (
+		sm:   21px,
+		md:   24px
+	),
+	'title-md': (
+		sm:   30px,
+		md:   36px
+	),
+	'title-lg': (
+		sm:   50px,
+		md:   60px,
+		lg:   90px
+	)
+);
+
+
+%title-default{
+	margin-top: 5px;
+	line-height: 1.2;
+	font-weight: normal;
+	@extend .bold;
+}
+@include b('title'){
+	&-xs{
+		font-size: 18px;
+		@include fs('title-xs');
+		@extend %title-default;
+	}
+	&-sm{
+		font-size: 20px;
+		@include fs('title-sm');
+		@extend %title-default;
+	}
+	&-md{
+		font-size: 25px;
+		@include fs('title-md');
+		@extend %title-default;
+	}
+	&-lg{
+		font-size: 25px;
+		@include fs('title-lg');
+		@extend %title-default;
+	}
+	&-section{
+		text-align: center;
+		margin-bottom: 45px;
+		@include min(sm){
+			margin-bottom: 60px;
+		}
+	}
+}

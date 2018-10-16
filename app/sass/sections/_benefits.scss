@@ -1,0 +1,60 @@
+@include b('benefits'){
+	position: relative;
+	@include padding-y(90px, 65px);
+	color: $color-white;
+	@include m('camp'){
+		@include bg('../img/bg-benefit-camp.jpg');
+	}
+	@include m('children-future'){
+		@include bg('../img/bg-benefit-children-future.jpg');
+	}
+	@include min(md){
+		padding-bottom: 130px;
+		@media screen{
+			background-attachment: fixed;
+		}
+	}
+	&:before{
+		@include pseudo();
+		left: 0;
+		top: 0;
+		@include size(100%);
+		background-color: transparentize($color-brand-2, 0.16);
+	}
+	@include e('quadro'){
+		@include m('1'){
+			top: calc(100% - #{$quadro-size / 1.5});
+			left: 0;
+			@include min(md){
+				top: calc(100% - #{$quadro-size_md / 1.5});
+			}
+		}
+		@include m('2'){
+			bottom: calc(100% - #{$quadro-size / 1.5});
+			right: 0;
+			@include min(md){
+				bottom: calc(100% - #{$quadro-size_md / 1.5});
+			}
+		}
+	}
+	@include e('video'){
+		text-align: center;
+		margin-bottom: 45px;
+		@include ee('iframe'){
+			display: inline-block;
+			height: 300px;
+			width: 100%;
+			@include min(sm){
+				width: 650px;
+				height: 350px;
+			}
+		}
+	}
+
+	@include e('row'){
+		@include min(md){
+			width: 90%;
+			@include margin-x(auto);
+		}
+	}
+}
